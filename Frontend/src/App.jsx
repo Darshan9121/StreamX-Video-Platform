@@ -9,7 +9,7 @@ import './App.css'
 function App() {
 
   return (
-   <div className='bg-[#231010] w-dvw'>
+   <div className='bg-[#231010] container '>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />

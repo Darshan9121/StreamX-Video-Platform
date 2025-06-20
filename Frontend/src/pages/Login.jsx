@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 
 const Login = () => {
   return (
@@ -16,7 +17,7 @@ const Login = () => {
             placeholder="Password"
             className="w-full px-4 py-3 rounded border border-red-900 bg-transparent text-white placeholder-red-200 focus:outline-none focus:ring-2 focus:ring-red-500"
           />
-          <div className="flex items-center mt-2">
+          <div className="flex items-center justify-between mt-2">
             <label className="text-white text-sm mr-2" htmlFor="remember">Remember me</label>
             <input
               id="remember"
@@ -24,9 +25,9 @@ const Login = () => {
               className="form-checkbox h-4 w-4 text-red-500 border-red-900 bg-transparent focus:ring-red-500"
             />
           </div>
-          <div className="flex justify-between items-center mt-2">
-            <span></span>
-            <a href="#" className="text-xs text-white hover:underline">Forgot password?</a>
+          <div className="flex justify-center  items-center p-2 mt-2">
+            
+            <a href="#" className="text-xs text-[#C79194] hover:underline">Forgot password?</a>
           </div>
           <div className="flex justify-center mt-6">
             <button
@@ -38,12 +39,7 @@ const Login = () => {
           </div>
         </form>
       </div>
-      <footer className="flex justify-center items-center mb-4 w-full">
-        <span className="text-white text-sm flex items-center gap-1">
-          <svg width="16" height="16" fill="currentColor" className="inline-block"><path d="M2 13l2-2 3 3 7-7-2-2-5 5-3-3-2 2z"/></svg>
-          StreamX
-        </span>
-      </footer>
+     <Footer/>
     </div>
   );
 };
