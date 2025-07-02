@@ -71,7 +71,7 @@ const Home = () => {
   const isAdmin = false;
 
   return (
-    <div className="h-fit p-2 bg-[#231010] text-white flex flex-col border-gray-200">
+    <div className="h-fit  px-1 py-2 flex flex-col gap-8 bg-[#231010] text-white flex flex-col border-gray-200">
       <Navbar isAuthenticated={isAuthenticated} isAdmin={isAdmin} />
       {/* <main className="container flex flex-col mx-auto p-4 sm:p-6 lg:p-8 lg:gap-6 pt-28 "> */}
       <main className="pt-24 lg:pt-20 flex flex-col gap-4">
@@ -131,7 +131,9 @@ const Home = () => {
         <VideoTray name={"Trending"}/>
        
         {/* Feed Section */}
-        <VideoTray name={"Feed"}/>
+        <div id="feed-section">
+          <VideoTray name={"Feed"}/>
+        </div>
 
 
         {/* Continue Watching Section */}

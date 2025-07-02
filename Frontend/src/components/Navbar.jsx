@@ -5,8 +5,8 @@ const Navbar = ({ isAuthenticated = false, isAdmin = false }) => {
   const commonLinks = [{ name: 'Home', path: '/' }];
   const clientLinks = [
     ...commonLinks,
-    { name: 'Browse', path: '/browse' },
-    { name: 'My Videos', path: '/my-videos' },
+    { name: 'Browse', path: '/#feed-section', isAnchor: true },
+    { name: 'My Videos', path: '/profile#my-videos-section', isAnchor: true },
     { name: 'Profile', path: '/profile' },
   ];
   const adminLinks = [
@@ -18,11 +18,12 @@ const Navbar = ({ isAuthenticated = false, isAdmin = false }) => {
   const links = isAuthenticated ? (isAdmin ? adminLinks : clientLinks) : [];
 
   return (
-    <nav className="bg-[#231010] text-white shadow-md border-b-2  border-red-500 w-full h-fit rounded-full  fixed  ">
-      <div className="container mx-auto px-4   ">
+    // <nav className="bg-[#231010] text-white shadow-md border-b-2  border-red-500 w-full h-fit rounded-full  fixed  z-20">
+    <nav className="bg-[#231010] text-white shadow-md border-b-2  border-red-500 w-full h-fit   fixed  z-20">
+      <div className="container  px-4   ">
         <div className=" h-16 flex justify-between  ">
           {/* Logo */}
-          <div className=" flex flex-row  space-x-8  ">
+          <div className=" flex flex-row  space-x-6  ">
             <NavLink to="/" className="flex items-center space-x-2 text-xl font-bold">
               <svg
                 className="w-6 h-6 text-red-500"
@@ -51,17 +52,27 @@ const Navbar = ({ isAuthenticated = false, isAdmin = false }) => {
             {/* Nav Links */}
             <div className="hidden md:flex items-center space-x-6 ">
               {links.map((link) => (
-                <NavLink
-                  key={link.name}
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `text-sm font-medium transition-colors hover:text-red-400 ${
-                      isActive ? 'text-red-500 border-b-2 border-red-500' : 'text-gray-300'
-                    }`
-                  }
-                >
-                  {link.name}
-                </NavLink>
+                link.isAnchor ? (
+                  <a
+                    key={link.name}
+                    href={link.path}
+                    className="text-sm font-medium transition-colors hover:text-red-400 text-gray-300"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <NavLink
+                    key={link.name}
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `text-sm font-medium transition-colors hover:text-red-400 ${
+                        isActive ? 'text-red-500 border-b-2 border-red-500' : 'text-gray-300'
+                      }`
+                    }
+                  >
+                    {link.name}
+                  </NavLink>
+                )
               ))}
             </div>
           
