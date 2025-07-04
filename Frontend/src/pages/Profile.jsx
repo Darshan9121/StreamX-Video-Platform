@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const demoUser = {
   name: 'Sarah Miller',
@@ -106,6 +107,7 @@ const Profile = () => {
       </div>
 
       {/* Upload Button */}
+      <Link to="/upload">Upload</Link>
       <button className="w-full max-w-xs bg-red-600 hover:bg-red-700 transition-colors text-white py-2 rounded-full font-semibold text-lg shadow-lg mt-2">Upload!</button>
       <Footer/>
     </div>
